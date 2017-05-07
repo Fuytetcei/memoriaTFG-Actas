@@ -5,9 +5,21 @@
 \usepackage[spanish,activeacute]{babel}
 \usepackage{mathtools}
 \usepackage{enumerate} 
+\usepackage{framed}
+\usepackage{color}
+\usepackage{wrapfig}\definecolor{shadecolor}{RGB}{224,238,238}
+\usepackage{multirow}
 
 \title{Toma de actas}
-\author{Daniel David Abell\'an Serrano}
+ \author{ 
+	MÁRMOL PÉREZ, JUAN MANUEL \\
+	\and
+	GRACIA SANCHA, JULIA \\
+	\and
+	PALACIOS, LUIS \\
+	\and
+	ABELL'AN SERRANO, DANIEL DAVID \\
+} 
 
 \begin{document}
 \maketitle
@@ -47,7 +59,7 @@ Resumen (Tambi'en en ingl'es).
 (No hay resumen hasta que acabemos)
 
 Motivaciones y objetivos.
-Debido a la gran velocidad de avance tecnol'ogico en las TIC's es necesario adaptar y acercar estas tecnolog'ias a la sociedad para su uso cotidiano. En particular hemos creado una herramienta que facilita la organizaci'on y dinamismo de entidades colaborativas ayudando al registro y difusi'on de sus actividades a trav'es de internet en la plataforma Teem. En concreto hemos modificado Teem añadi'endole la funcionalidad necesaria para que se convierta en una herramienta de toma de actas en tiempo real as'i como mantener un registro público y duradero de cada entrada.
+Debido a la gran velocidad de avance tecnol'ogico en las TIC's es necesario adaptar y acercar estas tecnolog'ias a la sociedad para su uso cotidiano. En particular hemos creado una herramienta que facilita la organizaci'on y dinamismo de entidades colaborativas ayudando al registro y difusi'on de sus actividades a trav'es de internet basada en la plataforma Teem. En concreto hemos modificado Teem añadi'endole la funcionalidad necesaria para que se convierta en una herramienta de toma de actas en tiempo real as'i como mantener un registro público y duradero de cada entrada.
 
 \section{Estado del arte}
 Actualmente ya existen bastantes tecnologías que permiten la interacción entre personas y distribución de información en tiempo real. En particular nos centraremos en aquellas tecnologías y herramientas dedicadas a apoyar reuniones de trabajo en diferentes contextos y haremos más énfasis en aquellas que sean software libre.
@@ -70,14 +82,133 @@ Actualmente ya existen bastantes tecnologías que permiten la interacción entre
 			\item Investigación y prototipado. En esta fase nos hemos dedicado en paralelo a estudiar las tecnologías necesarias para la posterior implementación del proyecto y a la fase de investigación previa. El estudio de las tecnologías las ha llevado cada miembro del grupo por su parte.
 			En la fase de investigación nos hemos basado (y no seguido al pie de la letra) el diseño centrado en el usuario.
 			\begin{itemize}
-				\item En primer lugar tuvimos una toma de contacto donde expresamos qué nos sugería el proyecto así como un pequeño brainstorming donde propusimos soluciones rápidas al proyecto. (aquí tendremos que insertar esas ideas/sugerencias). Además también acordamos el ámbito al que está orientado nuestro proyecto, en concreto a asociaciones del procomún y entidades colaborativas.
-				\item Después hicimos una pequeña investigación sobre el estado del arte la cual se puede consultar en el apartado correspondiente.
-				\item Preparamos una serie de entrevistas a potenciales usuarios/as para crear el perfil ideal de usuario/a de nuestra aplicación. Estas reuniones consistieron en una entrevista con una batería de preguntas (incluimos la batería y un link a los audios?).
-				(Aquí nuestra conclusión, lista de factoides y el perfil de Francisco)
-				\item También preparamos un cuestionario el cual difundimos pero no tuvo mucho éxito así que no ha tenido influencia alguna en nuestras conclusiones.
-				\item En último lugar y en base a los factoides y el usuario creado identificamos los problemas a resolver que ordenamos en una lista por prioridad de desarrollo. (Aquí deberíamos contar cómo y por qué los hemos ordenado así)
+				\item En primer lugar tuvimos una toma de contacto donde expresamos qué nos suger'ia el proyecto as'i como un pequeño brainstorming donde propusimos soluciones r'apidas al proyecto. (aqu'i tendremos que insertar esas ideas/sugerencias). Adem'as tambi'en acordamos el 'ambito al que est'a orientado nuestro proyecto, en concreto a asociaciones del procom'un y entidades colaborativas.
+				\item Despu'es hicimos una pequeña investigaci'on sobre el estado del arte la cual se puede consultar en el apartado correspondiente.
+				\item Antes de empezar a investigar cual es nuestro usuario/a ideal hicimos un postulado sobre los perfiles de usuarios que se pudieran usar en nuestro proyecto. Partiendo de que nuestros/as usuarios/as, en teoría, pueden ser cualquier persona al tratarse de un entorno abierto en el que cualquiera puede participar. Dado que debemos acotar los distintos/as usuarios/as para ser 'as efectivos escogimos los factores que pudieran ser influyentes para definir los tipos de usuario/a. Estos factores son:
+					\begin{itemize}
+						\item La edad es un factor muy importante debido a la brecha generacional y tecnológica actual. Por lo tanto las personas de menos edad tendrán más facilidades y las de mayor edad más dificultades de adaptación a la herramienta.
+						\item Objetivos por los que usa el sistema: conseguir una solución para que la toma de actas sea más eficiente en un entorno colaborativo y descentralizado.
+						\item Actividades que realizan: reuniones frecuentes para organizar distintas actividades y/o proyectos as'i como desarrollar los mismos.
+						\item Se presupone un uso habitual de dispositivos como tablets, pc’s, m'oviles, etc. en las actividades diarias profesionales o no.
+						\item Se presupone un conocimiento nulo ya que asumimos que cualquier persona puede incorporarse a una actividad/proyecto y no haber utilizado antes una herramienta similar.
+					\end{itemize}
+				(Algo hay que decir sobre los factores que creemos no influyen en nuestra investigación).
+				Teniendo en cuenta lo mencionado antes hemos sacado estos perfiles de usuarios: \\
+					\begin{itemize}
+						\item Joven (hasta los 35-40)  sin experiencia en actividades colaborativas.
+						\item Joven con conocimiento de herramientas similares.
+						\item Joven sin conocimiento de herramientas similares.
+						\item Adulto (40-muerte) sin experiencia en actividades colaborativas.
+						\item Adulto con conocimiento de herramientas similares.
+						\item Adulto sin conocimiento de herramientas similares.
+					\end{itemize}
+				De todos estos perfiles escogimos al usuario/a joven, con un conocimiento medio de las TIC's y con experiencia en entidades colaborativas.
+				\item A continuaci'on preparamos una serie de entrevistas a potenciales usuarios/as para crear el perfil ideal de usuario/a de nuestra aplicación. Estas reuniones consistieron en una entrevista con una batería de preguntas común a los/las entrevistados/as. Estas entrevistas las hemos grabado en audio para extraer una lista de factoides y refinar nuestro usuario ideal. (incluimos la batería y un link a los audios?).
+				\newpage
+				\begin{shaded}
+				Lista de factoides: \\
+				\begin{itemize}
+					\item Los usuarios/as entrevistados tienen reuniones semanales.
+					\item En todas las reuniones se tratan varios puntos del día.
+					\item El presidente de ASCII lleva preparados los puntos del día.
+					\item El presidente de ASCII lleva las tareas propuestas en la reunión anterior y su estado.
+					\item En las reuniones de ASCII hay una persona encargada de apuntar las cosas importantes que se dicen.
+					\item Después de cada reunión de ASCII se repasan los puntos tratados durante la reunión.
+					\item El presidente de ASCII gestiona los turnos de palabra.
+					\item Las tareas propuestas y/o asignadas de ASCII se anotan en el acta.
+					\item Las actas de ASCII tienen que estar en formato físico para su validación con la institución.
+					\item La secretaria de ASCII elabora un borrador del acta de reunión.
+					\item El presidente de ASCII valida el borrador de acta.
+					\item Varios socios de ASCII validan el acta final.
+					\item Las actas de ASCII se publican.
+					\item El /la secretario/a de ASCII se encarga de tomar el acta.
+					\item Tanto Aje como Rotor tienen un puesto en su organización que realiza las funciones de un moderador.
+					\item El puesto de moderador/a en Rotor se elige anualmente.
+					\item Los responsables de Rotor repasan los puntos del día al inicio de la reunión.
+					\item Los responsables de una tarea presentaron sus avances.
+					\item El presidente de Rotor lleva un resumen informal de los puntos a tratar en la próxima reunión.
+					\item En Rotor cada acta lleva apuntada las tareas programadas y el estado de las mismas.
+					\item El presidente de Rotor no ve útil que se apunte el estado de las tareas.
+					\item El moderador/a en Rotor gestiona los turnos de palabra.
+					\item En Rotor no se publican las actas ya que pueden contener información personal.
+					\item En Rotor las actas tardan en llegar a tiempo para la siguiente reunión.
+					\item En Rotor solo se validan las actas en las reuniones más importantes.
+					\item Las actas de Rotor se envían por correo a los/as socios/as.
+					\item Los puntos del día de las reuniones de Aitor se publican el mismo día de la reunión.
+					\item El acta de las reuniones de Aitor tarda en publicarse y en llegar a los interesados.
+					\item En las reuniones de Aitor no suele quedar tiempo para repasar lo acordado en la misma reunión.
+					\item Aitor piensa que el reconocimiento de voz sería muy útil, hasta llegar al punto de sustituir a la persona encargada de tomar el acta.
+					\item Las tareas asignadas en las reuniones de Aitor no son conocidas por todos los miembros de la asamblea y no se suele publicar el estado de las mismas.
+					\item En las reuniones de Emilia si mucha gente pide el turno de palabra anota los nombres de las personas que quieren intervenir para luego concederles el turno de palabra.
+					\item Las reuniones de Emilia tienen un carácter informal, y solo hacen una reunión formal al año.
+					\item En la reunión de Hajo se aprobó el acta de la reunión anterior.
+					\item En la reunión de Hajo cada asistente habló sobre sus responsabilidades.
+					\item En las reuniones de las diferentes entidades hay punto de ruegos y preguntas al final de las mismas.
+					\item En Hajo todo el mundo lleva su guión formal con los puntos del día.
+					\item El presidente de Hajo suele hacer anotaciones puntuales.
+					\item En las reuniones de Hajo los turnos de palabra están predefinidos.
+					\item En Hajo se anotan las tareas y sus asignaciones en un Google Docs.
+					\item En Hajo no se publican las actas por contener información reservada.
+					\item Al inicio de cada reunión de Hajo se repasa el acta anterior y se envía para su validación.
+				\end{itemize}
+			\end{shaded}
+		(habría que sacar más factoides si mal no recuerdo)
+		\newpage
+		\begin{shaded}
+			\textbf{USUARIO IDEAL}: \\
+				\textbf{Nombre:} Francisco Manzano\\
+				\textbf{Edad:} 28\\
+				\textbf{Grado de conocimientos inform'aticos:} Medio\\
+				\textbf{Sexo:} Hombre\\
+				\textbf{N'umero de reuniones semanales:} 1\\
+				\textbf{Profesi'on / situaci'on laboral:} Secretario en la toma de actas.\\
+				\textbf{Informaci'on personal:} Francisco es un hombre comprometido con las entidades colaborativas. Actualmente est'a cursando su tercer m'aster y como estudiante acude como a las reuniones de las asociaciones estudiantiles de las diversas facultades de la UCM. Este año acudir'a a la reuni'on de la Semana de la Ciencia Indignada que se celebra en Mayo. \\
+				\textbf{Objetivo final:}
+					\begin{itemize}
+						\item Su principal objetivo es reducir el tiempo que emplea en la toma de actas y la validaci'on de la misma.
+						\item Facilitar la validaci'on y el seguimiento de las tareas asignadas en reuni'on.
+					\end{itemize}
+				\textbf{Objetivos y motivaciones:}
+					\begin{itemize}
+						\item Automatizar la toma de actas.
+						\item Facilitar la moderaci'on de los turnos de palabra.
+						\item Facilitar la asignaci'on y seguimiento de tareas (Medir el inter'es y de participaci'on de los miembros de la organizaci'on sobre las tareas asignadas).
+						\item Tener un control de los puntos del d'ia para poder repasarlos todos (Identificaci'on de los puntos del d'ia antes de la reuni'on).
+						\item Tener un espacio de consulta para todos los miembros de la organizaci'on.
+							\begin{itemize}
+								\item Agilizar el env'io del acta a los miembros de la reuni'on o asociaci'on.
+								\item Publicaci'on del acta en un entorno accesible para todos.
+							\end{itemize}
+						\item Facilitar la validaci'on del acta.
+						\item Poder grabar la reuni'on para que los posibles ausentes a la reuni'on puedan verlo.
+						\item La generaci'on de un formato imprimible del acta.
+						\item Recordatorio de realizaci'on de las tareas pendientes.
+					\end{itemize}
+		\end{shaded}
+				\item Tambi'en preparamos un cuestionario el cual difundimos pero no tuvo mucho 'exito por lo que no ha tenido influencia alguna en nuestras conclusiones.
+				\item En 'ultimo lugar y en base a los factoides y el usuario creado identificamos los problemas a resolver que ordenamos en una lista por prioridad de desarrollo. (Aquí deberíamos contar cómo y por qué los hemos ordenado así) \\ \\
+				Lista de tareas a realizar y prioridad:
+					\begin{table}[htbp]
+					\begin{center}
+					\begin{tabular}{|l|l|}
+					\hline
+					Problema & Prioridad \\
+					\hline \hline
+					Asignaci'on y seguimiento de tareas. & 0 \\ \hline
+					Moderaci'on y registro de los turnos de palabra. & 1 \\ \hline
+					Env'io del acta a los miembros de la reuni'on o asociaci'on. & 2 \\ \hline
+					Identificaci'on de los puntos del d'ia antes de la reuni'on. & 3 \\ \hline
+					La generaci'on de un formato imprimible del acta (PDF,word...). & 4 \\ \hline
+					Facilitar la validaci'on del acta. & 5 \\ \hline
+					Recordatorio de realizaci'on de las tareas pendientes. & 6 \\ \hline
+					Medir el inter'es y de participaci'on de los miembros de la organizaci'on sobre las tareas asignadas. & 7 \\ \hline
+					Grabaci'on actas. & 8 \\ \hline
+					Automatizar la toma de actas. & 9 \\ \hline
+					\end{tabular}
+					\end{center}
+					\end{table}
 			\end{itemize}
-		\item Implementación y pruebas (este para el final). 
+		\item Implementaci'on y pruebas (este para el final). 
 		\end{itemize}
 	\subsection{Tecnolog'ias}
 \section{Desarrollo e implementaci'on}
